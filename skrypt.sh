@@ -1,9 +1,9 @@
 #!/bin/bash
 
 
-if [[ "$1" == "--date" ]]; then
+if [[ "$1" == "--date" || "$1" == "-d"]]; then
     echo "dzisiaj jest: $(date)"
-elif [[ "$1" == "--logs" ]]; then
+elif [[ "$1" == "--logs" || "$1" == "-l" ]]; then
 
    if [[ -n "$2" ]]; then
         num_files=$2
@@ -16,7 +16,7 @@ elif [[ "$1" == "--logs" ]]; then
         echo -e "filename: $filename\nscript: $0\ndate: $(date)" > $filename
     done
 
-elif [[ "$1" == "--help" ]]; then
+elif [[ "$1" == "--help" || "$1" == "-h"]]; then
     echo "--date wyświetli dzisiejszą datę \n--logs utworzy 100 plików logX.txt\n--logs X utworzy X plików o nazwie logX.txt"
 else
 
