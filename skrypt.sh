@@ -21,6 +21,12 @@ elif [[ "$1" == "--help" || "$1" == "-h"]]; then
     echo "--logs lub -l utworzy 100 plików logX.txt"
     echo "--logs X lub -l X utworzy X plików o nazwie logX.txt"
     echo "--help lub -h wyświetli pomoc"
+
+elif [[ "$1" == "--init" || "$1" == "-i" ]]; then
+    repo_url="https://github.com/tomek834/Lab4_NarzedziaPracyWBranzyIT.git"
+    git clone "$repo_url" .
+    current_dir=$(pwd)
+    export PATH=$PATH:$current_dir
 else
 
 
