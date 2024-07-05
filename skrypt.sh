@@ -16,10 +16,25 @@ elif [[ "$1" == "--logs" || "$1" == "-l" ]]; then
         echo -e "filename: $filename\nscript: $0\ndate: $(date)" > $filename
     done
 
+elif [[ "$1" == "--error" || "$1" == "-e" ]]; then
+
+   if [[ -n "$2" ]]; then
+        num_files=$2
+    else
+        num_files=100
+    fi
+
+    for i in $(seq 1 $num_files); do
+        filename="error/error$i.txt"
+        echo -e "filename: $filename\nscript: $0\ndate: $(date)" > $filename
+    done
+
 elif [[ "$1" == "--help" || "$1" == "-h"]]; then
     echo "--date lub -d wyświetli dzisiejszą datę"
     echo "--logs lub -l utworzy 100 plików logX.txt"
     echo "--logs X lub -l X utworzy X plików o nazwie logX.txt"
+    echo "--error lub -e utworzy 100 plików error/errorX.txt"
+    echo "--error X lub -e X utworzy X plików o nazwie error/errorX.txt"
     echo "--help lub -h wyświetli pomoc"
 
 elif [[ "$1" == "--init" || "$1" == "-i" ]]; then
