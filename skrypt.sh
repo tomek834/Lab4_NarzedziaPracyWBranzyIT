@@ -17,7 +17,10 @@ elif [[ "$1" == "--logs" || "$1" == "-l" ]]; then
     done
 
 elif [[ "$1" == "--help" || "$1" == "-h"]]; then
-    echo "--date wyświetli dzisiejszą datę \n--logs utworzy 100 plików logX.txt\n--logs X utworzy X plików o nazwie logX.txt"
+    echo "--date lub -d wyświetli dzisiejszą datę"
+    echo "--logs lub -l utworzy 100 plików logX.txt"
+    echo "--logs X lub -l X utworzy X plików o nazwie logX.txt"
+    echo "--help lub -h wyświetli pomoc"
 else
 
 
